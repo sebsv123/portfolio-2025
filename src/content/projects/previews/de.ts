@@ -22,7 +22,7 @@ export default [
   {
     title: "Valentín Protección Integral",
     slug: "valentin-proteccion-integral",
-    thumbnail: "https://placehold.co/600x400/1e1232/a78bfa?text=Valent%C3%ADn+PI",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fvalentinproteccionintegral.com&screenshot=true&meta=false&embed=screenshot.url",
     description: "Vollständige Versicherungsmakler-Website",
   },
 ] as const satisfies ProjectPreview[];
