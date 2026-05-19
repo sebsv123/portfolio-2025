@@ -1,37 +1,41 @@
 :root {
-  //--color-text-400: #001341;
-  --color-text-400: #2d2a24;
-  --color-text-300: #5f5646;
+  /* === PALETA SEBASTIÁN SIFONTES — AI / Dark Violet === */
 
-  --color-grayscale-500: rgb(223, 210, 191);
-  --color-grayscale-400: rgb(233, 222, 208);
+  --color-text-400: #e8e4f0;
+  --color-text-300: #a89ec0;
 
-  --color-beige-700: rgb(223, 209, 188);
-  --color-beige-600: rgb(233, 222, 208);
-  --color-beige-500: rgb(241, 229, 213);
-  --color-beige-400: #f5efe6;
+  --color-grayscale-500: rgb(58, 50, 80);
+  --color-grayscale-400: rgb(72, 62, 98);
 
-  --color-background-400: #f5efe6;
+  --color-beige-700: rgb(30, 24, 50);
+  --color-beige-600: rgb(36, 28, 60);
+  --color-beige-500: rgb(44, 34, 72);
+  --color-beige-400: #1a1128;
 
-  --color-black-400: #2d2a24;
+  --color-background-400: #120d1e;
 
-  --color-gray-500: #67727c;
-  --color-gray-400: #a9b0b7;
+  --color-black-400: #0d0916;
 
-  --color-orange-400: #ff8400;
+  --color-gray-500: #6b5f8a;
+  --color-gray-400: #9b8fbf;
 
-  --color-white-400: #ffffff;
+  /* Acento principal — violeta eléctrico */
+  --color-orange-400: #8b5cf6;
 
-  --color-cyan-500: #0086bb;
-  --color-cyan-400: rgb(52, 191, 255);
+  --color-white-400: #f0ecff;
 
-  --color-text-cyan-400: #e1f5ff;
-  --color-text-cyan-300: #81bdd8;
+  /* Acento secundario — compatible con hologram vars */
+  --color-cyan-500: #6d28d9;
+  --color-cyan-400: rgb(167, 139, 250);
 
-  --color-dark-blue-600: #234ba2;
-  --color-dark-blue-500: #052e87;
-  --color-dark-blue-400: #002474;
+  --color-text-cyan-400: #ede9fe;
+  --color-text-cyan-300: #c4b5fd;
 
-  --color-hologram-top: rgb(0, 53, 133);
-  --color-hologram-bottom: rgba(0, 82, 145, 0.6);
+  --color-dark-blue-600: #4c1d95;
+  --color-dark-blue-500: #3b0764;
+  --color-dark-blue-400: #2e1065;
+
+  /* Hologram widget — deep purple AI */
+  --color-hologram-top: rgb(74, 29, 150);
+  --color-hologram-bottom: rgba(109, 40, 217, 0.55);
 }
