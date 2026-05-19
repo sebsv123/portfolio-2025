@@ -22,13 +22,11 @@ watchEffect((onInvalidate) => {
   const wrapperEl = wrapperRef.value;
   if (!wrapperEl) return;
 
-  // Clean up previous matchMedia
   if (matchMedia) {
     matchMedia.revert();
     matchMedia = null;
   }
 
-  // Initialize GSAP matchMedia
   matchMedia = gsap.matchMedia();
 
   matchMedia.add(
@@ -45,7 +43,6 @@ watchEffect((onInvalidate) => {
         paused: true,
       });
 
-      // Only animate clipPath on landscape (animations disabled on portrait)
       if (isLandscape) {
         tl.fromTo(
           wrapperEl,
@@ -54,11 +51,9 @@ watchEffect((onInvalidate) => {
           0,
         );
       } else {
-        // On portrait, set clipPath immediately without animation
         gsap.set(wrapperEl, { clipPath: "inset(0% 0% 0% 0%)" });
       }
 
-      // Only add timeline animations on landscape
       if (isLandscape) {
         for (let i = 0; i < timelines.value.length; i++) {
           const item = timelines.value[i];
@@ -71,7 +66,6 @@ watchEffect((onInvalidate) => {
 
       emit("timeline:created", tl);
 
-      // Return cleanup function
       return () => {
         tl.kill();
       };
@@ -104,7 +98,7 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
       <div class="box-details-content">
         <div class="box-details-title">
           <AppearingText
-            text="David"
+            text="Sebasti\u00e1n"
             :steps="1"
             :duration="0.35"
             @timeline:created="(tl: gsap.core.Timeline) => handleTimelineCreated(tl, 0)"
