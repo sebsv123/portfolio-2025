@@ -85,6 +85,12 @@ import AppearingText from "../../../components/AppearingText.vue";
     font-weight: 900;
     letter-spacing: 0.02em;
     font-size: var(--font-size-title-lg);
+    /* Contraste garantizado — visible sobre cualquier fondo */
+    color: #ffffff !important;
+    text-shadow:
+      0 0 40px rgba(167, 139, 250, 0.8),
+      0 2px 8px rgba(0, 0, 0, 0.9),
+      0 0 2px rgba(0, 0, 0, 1);
 
     @include mixins.landscape {
       font-size: var(--font-size-title-lg);

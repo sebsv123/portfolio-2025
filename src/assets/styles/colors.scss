@@ -1,31 +1,32 @@
 :root {
   /* === PALETA SEBASTIÁN SIFONTES — AI / Dark Violet === */
 
-  /* Texto — alto contraste para fondo oscuro */
-  --color-text-400: #f0ecff;   /* blanco lavanda — texto principal */
-  --color-text-300: #c4b5fd;   /* violeta claro — texto secundario */
+  /* Fondo — deep midnight purple, oscuro de verdad */
+  --color-background-400: #080612 !important;
+  --color-black-400: #040309;
+
+  /* Superficies */
+  --color-beige-700: rgb(14, 10, 24);
+  --color-beige-600: rgb(18, 13, 32);
+  --color-beige-500: rgb(24, 17, 42);
+  --color-beige-400: #12082a;
 
   --color-grayscale-500: rgb(80, 68, 110);
   --color-grayscale-400: rgb(100, 86, 140);
 
-  /* Superficies — midnight purple */
-  --color-beige-700: rgb(18, 13, 30);
-  --color-beige-600: rgb(22, 16, 38);
-  --color-beige-500: rgb(28, 20, 48);
-  --color-beige-400: #16102a;
-
-  --color-background-400: #0d0916;
-  --color-black-400: #080612;
+  /* Texto — máximo contraste sobre fondo oscuro */
+  --color-text-400: #ffffff !important;
+  --color-text-300: #c4b5fd;
 
   --color-gray-500: #7c6fa8;
   --color-gray-400: #b8acdc;
 
-  /* Acento principal — violeta eléctrico bien saturado */
+  /* Acento principal — violeta eléctrico */
   --color-orange-400: #a78bfa;
 
   --color-white-400: #ffffff;
 
-  /* Acento holográfico — lila brillante */
+  /* Acento holográfico */
   --color-cyan-500: #7c3aed;
   --color-cyan-400: #a78bfa;
 
@@ -33,12 +34,18 @@
   --color-text-cyan-400: #ffffff;
   --color-text-cyan-300: #e9d5ff;
 
-  /* Deep purple gradients */
+  /* Deep purple */
   --color-dark-blue-600: #4c1d95;
   --color-dark-blue-500: #3b0764;
   --color-dark-blue-400: #2e1065;
 
-  /* Hologram widget — contraste máximo */
+  /* Hologram widget */
   --color-hologram-top: rgba(76, 29, 149, 0.95);
   --color-hologram-bottom: rgba(109, 40, 217, 0.6);
+}
+
+/* Override forzado para que el body/html no use el beige del template */
+html, body {
+  background-color: #080612 !important;
+  color: #ffffff !important;
 }
