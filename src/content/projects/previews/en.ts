@@ -1,47 +1,22 @@
-import thumbnailCubeWar from "../../../assets/thumbnails/cubewar.webp";
-import thumbnailQuibbo from "../../../assets/thumbnails/quibbo.webp";
-//import thumbnailParticles from "../../../assets/thumbnails/particles.webp";
-import thumbnailPokedex from "../../../assets/thumbnails/pokedex.webp";
-import thumbnailSharkie from "../../../assets/thumbnails/sharkie.webp";
-import thumbnailStreakon from "../../../assets/thumbnails/streakon.webp";
-
 import type { ProjectPreview } from "../../types";
 
 export default [
   {
-    title: "StreakOn",
-    slug: "streakon",
-    thumbnail: thumbnailStreakon,
-    description: "Social habit tracking app",
+    title: "ViraClip",
+    slug: "viraclip",
+    thumbnail: "https://placehold.co/600x400/1e1232/a78bfa?text=ViraClip",
+    description: "AI-powered video generation platform",
   },
   {
-    title: "CubeWar",
-    slug: "cubewar",
-    thumbnail: thumbnailCubeWar,
-    description: "Multiplayer strategy game",
+    title: "GenMail",
+    slug: "genmail",
+    thumbnail: "https://placehold.co/600x400/1e1232/a78bfa?text=GenMail",
+    description: "AI email automation with agents",
   },
   {
-    title: "Quibbo",
-    slug: "quibbo",
-    thumbnail: thumbnailQuibbo,
-    description: "Multiplayer gaming platform",
-  },
-  {
-    title: "Sharkie",
-    slug: "sharkie",
-    thumbnail: thumbnailSharkie,
-    description: "2D adventure game",
-  },
-  /**  {
-    title: "WebGL Particles",
-    slug: "particles",
-    thumbnail: thumbnailParticles,
-    description: "Dynamic 3D particles",
-  }, */
-  {
-    title: "Pokédex",
-    slug: "pokedex",
-    thumbnail: thumbnailPokedex,
-    description: "Open-source learning project",
+    title: "agente_seguros_ai",
+    slug: "agente-seguros",
+    thumbnail: "https://placehold.co/600x400/1e1232/a78bfa?text=agente_seguros_ai",
+    description: "WhatsApp insurance sales agent",
   },
 ] as const satisfies ProjectPreview[];

@@ -22,10 +22,7 @@ watchEffect((onInvalidate) => {
   const wrapperEl = wrapperRef.value;
   if (!wrapperEl) return;
 
-  if (matchMedia) {
-    matchMedia.revert();
-    matchMedia = null;
-  }
+  if (matchMedia) { matchMedia.revert(); matchMedia = null; }
 
   matchMedia = gsap.matchMedia();
 
@@ -39,9 +36,7 @@ watchEffect((onInvalidate) => {
       const { conditions } = context;
       const { isLandscape } = conditions as { isMobile: boolean; isDesktop: boolean; isLandscape: boolean };
 
-      const tl = gsap.timeline({
-        paused: true,
-      });
+      const tl = gsap.timeline({ paused: true });
 
       if (isLandscape) {
         tl.fromTo(
@@ -58,37 +53,26 @@ watchEffect((onInvalidate) => {
         for (let i = 0; i < timelines.value.length; i++) {
           const item = timelines.value[i];
           if (!item) continue;
-          tl.add(() => {
-            item.timeline.restart(true);
-          }, item.delay + 0.25);
+          tl.add(() => { item.timeline.restart(true); }, item.delay + 0.25);
         }
       }
 
       emit("timeline:created", tl);
-
-      return () => {
-        tl.kill();
-      };
+      return () => { tl.kill(); };
     },
   );
 
   onInvalidate(() => {
-    if (matchMedia) {
-      matchMedia.revert();
-      matchMedia = null;
-    }
+    if (matchMedia) { matchMedia.revert(); matchMedia = null; }
   });
 });
 
 onBeforeUnmount(() => {
-  if (matchMedia) {
-    matchMedia.revert();
-  }
+  if (matchMedia) { matchMedia.revert(); }
 });
 
 const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
-  const updatedTimelines = [...timelines.value, { timeline, delay }];
-  timelines.value = updatedTimelines;
+  timelines.value = [...timelines.value, { timeline, delay }];
 };
 </script>
 
@@ -96,12 +80,20 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
   <ProjectedElement :point="point">
     <div ref="wrapperRef" class="box-details">
       <div class="box-details-content">
-        <div class="box-details-title">
+        <div class="box-details-name">
           <AppearingText
-            text="Sebasti\u00e1n"
+            text="Sebastián"
             :steps="1"
             :duration="0.35"
             @timeline:created="(tl: gsap.core.Timeline) => handleTimelineCreated(tl, 0)"
+          />
+        </div>
+        <div class="box-details-jobtitle">
+          <AppearingText
+            :text="t('job-title')"
+            :steps="1"
+            :duration="0.35"
+            @timeline:created="(tl: gsap.core.Timeline) => handleTimelineCreated(tl, 0.08)"
           />
         </div>
         <div class="box-details-items">
@@ -113,7 +105,7 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
               :text="t('germany')"
               :steps="3"
               :duration="0.35"
-              @timeline:created="(tl: gsap.core.Timeline) => handleTimelineCreated(tl, 0.1)"
+              @timeline:created="(tl: gsap.core.Timeline) => handleTimelineCreated(tl, 0.15)"
             />
           </div>
         </div>
@@ -133,22 +125,19 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     position: absolute;
     padding-bottom: 3px;
     padding-right: var(--line-length);
-    width: 240px;
-    max-width: calc(var(--svw) * 30);
+    width: 260px;
+    max-width: calc(var(--svw) * 32);
     transform: translate(-100%, -50%);
   }
 
   @include mixins.landscape-large {
-    width: 240px;
+    width: 260px;
   }
 
   &::after,
   &::before {
     display: none;
-
-    @include mixins.landscape {
-      display: block;
-    }
+    @include mixins.landscape { display: block; }
   }
 
   &::after {
@@ -180,18 +169,36 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     background: linear-gradient(to bottom, var(--color-hologram-top) 0%, var(--color-hologram-bottom) 100%);
     gap: var(--space-xxs);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: var(--space-sm) var(--space-md);
-
-    @include mixins.landscape {
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: var(--space-xs) var(--space-sm);
-    }
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--space-xs) var(--space-sm);
 
     @include mixins.mq("md") {
       padding: var(--space-sm) var(--space-md);
+    }
+  }
+
+  &-name {
+    font-size: var(--font-size-title-xxs);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.01em;
+
+    @include mixins.mq("md") {
+      font-size: var(--font-size-title-sm);
+    }
+  }
+
+  &-jobtitle {
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: rgba(167, 139, 250, 1);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-xxs);
+
+    @include mixins.mq("md") {
+      font-size: var(--font-size-sm);
     }
   }
 
@@ -207,19 +214,10 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
   &-icon {
     width: var(--icon-size-xxs);
     transform: translateY(-1px);
-    --icon-color: var(--color-white-400);
+    --icon-color: #ffffff;
 
     @include mixins.mq("md") {
       width: var(--icon-size-xs);
-    }
-  }
-
-  &-title {
-    font-size: var(--font-size-title-xxs);
-    font-weight: 700;
-
-    @include mixins.mq("md") {
-      font-size: var(--font-size-title-sm);
     }
   }
 
@@ -227,6 +225,7 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     display: flex;
     font-size: var(--font-size-sm);
     flex-direction: column;
+    color: rgba(220, 210, 255, 0.9);
 
     @include mixins.mq("md") {
       font-size: var(--font-size-md);

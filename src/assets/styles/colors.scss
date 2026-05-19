@@ -1,41 +1,44 @@
 :root {
   /* === PALETA SEBASTIÁN SIFONTES — AI / Dark Violet === */
 
-  --color-text-400: #e8e4f0;
-  --color-text-300: #a89ec0;
+  /* Texto — alto contraste para fondo oscuro */
+  --color-text-400: #f0ecff;   /* blanco lavanda — texto principal */
+  --color-text-300: #c4b5fd;   /* violeta claro — texto secundario */
 
-  --color-grayscale-500: rgb(58, 50, 80);
-  --color-grayscale-400: rgb(72, 62, 98);
+  --color-grayscale-500: rgb(80, 68, 110);
+  --color-grayscale-400: rgb(100, 86, 140);
 
-  --color-beige-700: rgb(30, 24, 50);
-  --color-beige-600: rgb(36, 28, 60);
-  --color-beige-500: rgb(44, 34, 72);
-  --color-beige-400: #1a1128;
+  /* Superficies — midnight purple */
+  --color-beige-700: rgb(18, 13, 30);
+  --color-beige-600: rgb(22, 16, 38);
+  --color-beige-500: rgb(28, 20, 48);
+  --color-beige-400: #16102a;
 
-  --color-background-400: #120d1e;
+  --color-background-400: #0d0916;
+  --color-black-400: #080612;
 
-  --color-black-400: #0d0916;
+  --color-gray-500: #7c6fa8;
+  --color-gray-400: #b8acdc;
 
-  --color-gray-500: #6b5f8a;
-  --color-gray-400: #9b8fbf;
+  /* Acento principal — violeta eléctrico bien saturado */
+  --color-orange-400: #a78bfa;
 
-  /* Acento principal — violeta eléctrico */
-  --color-orange-400: #8b5cf6;
+  --color-white-400: #ffffff;
 
-  --color-white-400: #f0ecff;
+  /* Acento holográfico — lila brillante */
+  --color-cyan-500: #7c3aed;
+  --color-cyan-400: #a78bfa;
 
-  /* Acento secundario — compatible con hologram vars */
-  --color-cyan-500: #6d28d9;
-  --color-cyan-400: rgb(167, 139, 250);
+  /* Texto sobre acento */
+  --color-text-cyan-400: #ffffff;
+  --color-text-cyan-300: #e9d5ff;
 
-  --color-text-cyan-400: #ede9fe;
-  --color-text-cyan-300: #c4b5fd;
-
+  /* Deep purple gradients */
   --color-dark-blue-600: #4c1d95;
   --color-dark-blue-500: #3b0764;
   --color-dark-blue-400: #2e1065;
 
-  /* Hologram widget — deep purple AI */
-  --color-hologram-top: rgb(74, 29, 150);
-  --color-hologram-bottom: rgba(109, 40, 217, 0.55);
+  /* Hologram widget — contraste máximo */
+  --color-hologram-top: rgba(76, 29, 149, 0.95);
+  --color-hologram-bottom: rgba(109, 40, 217, 0.6);
 }
