@@ -19,4 +19,10 @@ export default [
     thumbnail: "https://placehold.co/600x400/1e1232/a78bfa?text=agente_seguros_ai",
     description: "WhatsApp insurance sales agent",
   },
+  {
+    title: "Valentín Protección Integral",
+    slug: "valentin-proteccion-integral",
+    thumbnail: "https://placehold.co/600x400/1e1232/a78bfa?text=Valent%C3%ADn+PI",
+    description: "Full insurance brokerage website",
+  },
 ] as const satisfies ProjectPreview[];
